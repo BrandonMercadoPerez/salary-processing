@@ -81,6 +81,39 @@ Run the program after compiling:
 
 Note: These commands are for local use only. GitHub does not execute or run C++ programs.
 
+## Sample Output
+
+The following is a simplified example of the program’s console output after
+processing one department. The actual output includes formatted tables and
+multiple departments.
+
+Department: IT Department  
+Total Salary: $3075.70  
+Total Hours: 168.00  
+Total Employees: 4  
+Roster: Bill, Betty, Brandon, Brad  
+
+F1 Stats  
+Total Salary: $413.10  
+Total Hours: 34.00  
+Total Employees: 1  
+
+F2 Stats  
+Total Salary: $1255.82  
+Total Hours: 83.50  
+Total Employees: 2  
+
+F3 Stats  
+Total Salary: $0.00  
+Total Hours: 0.00  
+Total Employees: 0  
+
+F4 Stats  
+Total Salary: $1406.78  
+Total Hours: 50.50  
+Total Employees: 1  
+
+
 ---
 
 ## Project Structure
