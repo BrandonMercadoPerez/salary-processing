@@ -91,4 +91,4 @@ salary-processing/
 
 ## Author
 
-Brandon Mercado
+Brandon Mercado Perez
