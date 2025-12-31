@@ -1,4 +1,4 @@
-## Payroll Processing – Lab 8 (C++)
+# Payroll Processing – Lab 8 (C++)
 
 This repository contains my C++ solution for Lab 8 (Chapter 7 – Salary Processing).
 The program reads payroll data from a text file, parses time and sales information,
