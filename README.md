@@ -75,3 +75,20 @@ GitHub does not run C++ programs.
 salary-processing/
 - README.md
 - src/
+  - PayrollParser.cpp
+- data/
+  - input.txt
+
+---
+
+## Notes
+
+- Scope is intentionally aligned with the course lab requirements
+- No executables or compiled files are included
+- This repository reflects my personal implementation of the lab
+
+---
+
+## Author
+
+Brandon Mercado
