@@ -9,6 +9,20 @@ correctness, clarity, and proper use of core C++ concepts.
 
 ---
 
+## Project Scope
+
+The purpose of this project is to practice parsing structured text data from a `.txt` file and applying basic logic to compute results based on that input. Since this was completed for an introductory programming course, the solution is intentionally limited to concepts covered in class.
+
+Only fundamental programming techniques are used, such as:
+- Basic file input
+- Conditional statements
+- Loops
+- Simple functions and variables
+
+Advanced features not yet taught in the course (such as vectors, string streams, or other advanced C++ libraries) were intentionally avoided.
+
+---
+
 ## Lab Objectives
 
 - File input using ifstream
