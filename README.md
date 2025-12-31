@@ -59,7 +59,7 @@ Time values may appear in formats such as:
 
 Compile the program locally using a C++ compiler:
 
-g++ -std=c++17 src/Lab8T.cpp -o payroll
+g++ -std=c++17 src/PayrollParser.cpp -o payroll
 
 Run the program after compiling:
 
@@ -75,20 +75,3 @@ GitHub does not run C++ programs.
 salary-processing/
 - README.md
 - src/
-  - Lab8T.cpp
-- data/
-  - input.txt
-
----
-
-## Notes
-
-- Scope is intentionally aligned with the course lab requirements
-- No executables or compiled files are included
-- This repository reflects my personal implementation of the lab
-
----
-
-## Author
-
-Brandon Mercado
