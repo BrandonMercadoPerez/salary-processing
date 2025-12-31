@@ -427,7 +427,7 @@ int main() {
     int totalEmployees = 0;
     string departmentName, roster;
 
-    ifstream file("input.txt");
+    ifstream file("data/input.txt");
     if (!file) {
         cerr << "Error opening file." << endl;
         return 1;
