@@ -1,2 +1,80 @@
-# salary-processing
-C++ Lab 8 (Chapter 7) salary processing program that parses payroll data from a text file and calculates employee pay by grade.
+# Payroll Processing – Lab 8 (C++)
+
+This repository contains my C++ solution for Lab 8 (Chapter 7 – Salary Processing).
+The program reads payroll data from a text file, parses time and sales information,
+and calculates employee pay based on predefined pay grades.
+
+This project was completed as part of a coursework assignment and focuses on
+correctness, clarity, and proper use of core C++ concepts.
+
+---
+
+## Lab Objectives
+
+- File input using ifstream
+- String parsing and numeric extraction
+- Conditional logic for multiple pay rules
+- Accumulating totals and formatting output
+- Writing modular and readable C++ code
+
+---
+
+## Pay Grade Rules Implemented
+
+- F1: Total hours × 12.15
+- F2: Total hours × 18.25
+- F3: Base salary plus commission based on sales
+- F4:
+  - Weekday hours × 26.55
+  - Weekend hours × 39.75
+
+---
+
+## Input
+
+Sample file: data/input.txt
+
+Time values may appear in formats such as:
+- 8 hours 20 minutes
+- 7hrs 10min
+- 9 hours
+
+---
+
+## How to Compile and Run
+
+Compile the program locally using a C++ compiler:
+
+g++ -std=c++17 src/Lab8T.cpp -o payroll
+
+Run the program after compiling:
+
+./payroll
+
+Note: These commands are for local use only.
+GitHub does not run C++ programs.
+
+---
+
+## Project Structure
+
+salary-processing/
+- README.md
+- src/
+  - Lab8T.cpp
+- data/
+  - input.txt
+
+---
+
+## Notes
+
+- Scope is intentionally aligned with the course lab requirements
+- No executables or compiled files are included
+- This repository reflects my personal implementation of the lab
+
+---
+
+## Author
+
+Brandon Mercado
