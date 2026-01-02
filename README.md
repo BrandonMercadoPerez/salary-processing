@@ -1,144 +1,48 @@
-# Payroll Processing – Lab 8 (C++)
+# Salary Processing: Introductory Payroll Calculation System
 
-This repository contains my C++ solution for Lab 8 (Chapter 7 – Salary Processing).
-The program reads payroll data from a text file, parses time and sales information, and calculates employee pay based on predefined pay grades.
+### **Project Overview:**
 
-This project was completed as part of a coursework assignment and focuses on correctness, clarity, and proper use of core C++ concepts taught in an introductory programming course.
+> Salary Processing is an introductory C++ application designed to parse and compute payroll data from departmental employee records in a text file. This project focuses on foundational programming concepts such as file I/O, string manipulation, conditional logic, and modular functions to handle basic payroll calculations across different employee grades.
 
----
+### **Key Features:**
 
-## Project Purpose and Scope
+> Multi-Department Processing:  
+> Reads and summarizes payroll data for multiple departments from a single input file.  
 
-The primary goal of this project is to practice reading and parsing structured text data from a `.txt` file and applying basic logic to compute payroll results based on that input.
+> Versatile Time Parsing:  
+> Handles mixed time formats (e.g., "8 hours 20 minutes", "7hrs 10min", "9 hours") with manual string extraction and rounding to the nearest half-hour.  
 
-Because this assignment was completed for an introductory programming course, the solution is intentionally limited to concepts that had been covered at the time. The emphasis is on understanding program flow, conditionals, loops, and basic function design rather than advanced C++ features.
+> Grade-Specific Calculations:  
+> Applies unique logic for pay grades F1, F2, F3, and F4, including hourly rates, overtime, commissions, and weekend premiums.  
 
-Only fundamental programming techniques are used, including:
+> Commission Handling for F3:  
+> Processes sales amounts and commission rates, assigning assumed work hours based on rate thresholds (30 or 40 hours).  
 
-* Basic file input using `ifstream`
-* Conditional statements and decision logic
-* Loops for repeated processing
-* Simple functions and variables
-* Manual string parsing techniques
+> Weekend and Overtime for F4:  
+> Differentiates weekday and weekend hours with adjusted pay rates.  
 
-Advanced features that had not yet been taught in the course (such as vectors, string streams, regular expressions, or advanced STL containers) were intentionally avoided.
+> Formatted Output:  
+> Displays results in a boxed, tabular format with totals for salaries, hours, employees, and rosters per department and grade.  
 
----
+> Basic Error Handling:  
+> Includes file open checks and assumes consistent input structure for stability in an educational context.
 
-## Lab Objectives
+## **Code Brainstorming:**
 
-* Read payroll data from an external text file
-* Parse time values expressed in multiple text formats
-* Extract numeric values from mixed text input
-* Apply different pay rules based on employee pay grade
-* Accumulate totals for hours, salaries, and employees
-* Produce formatted output summarizing department payroll data
-* Write clear, readable, and well-structured C++ code
+### **Basic Memory Management:**
 
----
+> Relies on stack-based variables and simple data types to avoid complexity.  
+> Uses primitive types like floats, doubles, and strings for calculations and storage.  
+> Avoids dynamic allocation to keep the focus on introductory concepts.
 
-## Pay Grade Rules Implemented
+### **Core Language Fundamentals:**
 
-The program supports multiple employee pay grades, each with its own calculation rules:
+> Employs conditional statements (if-else) for decision-making in parsing and calculations.  
+> Utilizes loops (while, for) for iterative string processing and data accumulation.  
+> Leverages standard library functions like stoi/stod for string-to-number conversions.
 
-* F1: Total hours worked multiplied by 12.15
-* F2: Total hours worked multiplied by 18.25
-* F3: Base salary calculated using sales amount and commission rate
-* F4:
+### **Modular Design Principles:**
 
-  * Weekday hours multiplied by 26.55
-  * Weekend hours multiplied by 39.75
-
-Each employee record is processed according to its corresponding pay grade.
-
----
-
-## Input Format
-
-The program reads data from a text file located at:
-
-data/input.txt
-
-Time values in the input file may appear in various formats, including but not limited to:
-
-* 8 hours 20 minutes
-* 7hrs 10min
-* 9 hours
-
-The program is designed to handle these variations using basic string parsing logic.
-
----
-
-## How to Compile and Run
-
-Compile the program locally using a C++ compiler:
-
-g++ -std=c++17 src/PayrollParser.cpp -o payroll
-
-Run the program after compiling:
-
-./payroll
-
-Note: These commands are for local use only. GitHub does not execute or run C++ programs.
-
-## Sample Output
-
-The following is a simplified example of the program’s console output after
-processing one department. The actual output includes formatted tables and
-multiple departments.
-
-Department: IT Department  
-Total Salary: $3075.70  
-Total Hours: 168.00  
-Total Employees: 4  
-Roster: Bill, Betty, Brandon, Brad  
-
-F1 Stats  
-Total Salary: $413.10  
-Total Hours: 34.00  
-Total Employees: 1  
-
-F2 Stats  
-Total Salary: $1255.82  
-Total Hours: 83.50  
-Total Employees: 2  
-
-F3 Stats  
-Total Salary: $0.00  
-Total Hours: 0.00  
-Total Employees: 0  
-
-F4 Stats  
-Total Salary: $1406.78  
-Total Hours: 50.50  
-Total Employees: 1  
-
-
----
-
-## Project Structure
-
-salary-processing/
-
-* README.md
-* src/
-
-  * PayrollParser.cpp
-* data/
-
-  * input.txt
-
----
-
-## Notes
-
-* The scope of this project is intentionally aligned with course lab requirements
-* The focus is on learning and demonstrating foundational C++ concepts
-* No compiled binaries or executables are included in this repository
-* This repository reflects my personal implementation of the lab assignment
-
----
-
-## Author
-
-Brandon Mercado Perez
+> Defines separate functions for each pay grade's processing (e.g., processF1F2, processF3, processF4) to promote code reuse and readability.  
+> Includes helper functions like convertMinutesToHours for time rounding.  
+> Uses pass-by-reference in functions to efficiently update tracking variables without global scope.
