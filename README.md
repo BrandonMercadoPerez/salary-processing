@@ -1,65 +1,71 @@
-Salary Processing: Introductory Payroll Calculation System
-Project Overview
-Salary Processing is a beginner-friendly C++ console application that processes payroll data from a text file (input.txt) and computes department-level and pay-grade statistics.
-This was completed as a lab assignment in an introductory programming course. The code uses only fundamental C++ features — file I/O, string manipulation, loops, conditionals, and functions — to demonstrate clear, well-commented solutions to real-world-style problems.
-Key Features
+# Salary Processing – Lab 8 (C++)
 
-Handles multiple departments from one input file
-Parses flexible time formats ("8 hours 20 minutes", "9hrs", "57 minutes", "10min", etc.)
-Supports all four pay grades with correct calculations:
-F1: total hours × $12.15
-F2: $500 base + overtime (hours > 35) × $18.95
-F3: sales × commission rate; 30 hours if rate ≤ 0.10, else 40 hours
-F4: first 5 days (weekday) × $26.55 + last 2 days (weekend) × $39.75
+### Project Overview
 
-Rounds minutes to nearest half-hour (1–29 min → 0.5 h; 30–59 min → 1.0 h)
-Produces clean, boxed tabular output with department totals and per-grade breakdowns
-Tracks and displays employee roster per department
+Salary Processing is a beginner-level C++ console application that reads payroll data from a text file and computes employee pay based on department and pay grade rules. This project was completed as **Lab 8** for an introductory programming course and is designed to demonstrate core C++ concepts through a realistic payroll-processing scenario.
 
-F4 Day Assignment & Parsing Logic
-F4 employees have exactly 7 time entries (Monday → Sunday).
-Entries are processed sequentially left-to-right using positional assignment:
-1–5 → Weekdays (Monday–Friday)
-6–7 → Weekend (Saturday–Sunday)
-Pairing rules:
+The program processes unstructured payroll input data, parses time and sales information, and produces summarized payroll results for each department. The focus of the project is correctness, clarity, and clean program flow using only concepts covered at the time of the course.
 
-Hours token ("h"/"hrs"/"hours") sets base hours for the current day
-If minutes token immediately follows, they are combined with those hours and rounded
-Standalone minutes are converted and rounded independently for that day
+This repository intentionally avoids advanced C++ features in order to stay aligned with the learning objectives of an introductory class.
 
-Example – Kent (Sales Department):
-9hrs 8hrs 1min 9 hrs 7hrs 5 min 8 hrs 55min 6min 1hr
+### Learning Objectives
 
+- Practice file input using text files
+- Apply conditional logic and loops to real-world data
+- Parse mixed-format input using basic string operations
+- Implement multiple pay calculation rules
+- Track totals and summaries across grouped data
+- Produce clear and readable console output
 
-→ Monday: 9 h  Tuesday: 8 h + 1 min → 8.0 h  Wednesday: 9 h
-→ Thursday: 7 h + 5 min → 7.0 h  Friday: 8 h + 55 min → 9.0 h
-→ Saturday: 6 min → 0.5 h  Sunday: 1 h
-This linear approach keeps code simple and readable while correctly separating weekday and weekend pay.
-Files in This Repository
+### Key Features
 
-PayrollParser.cpp – Complete source code with extensive inline comments explaining every major step
-input.txt – Sample payroll data identical to the lab specification
-SalaryProcessor.exe – Pre-compiled Windows executable (for instant testing)
+- Reads payroll data from a single input file (`input.txt`)
+- Supports multiple departments in one run
+- Handles flexible time formats (hours and minutes in various textual forms)
+- Processes four different employee pay grades
+- Calculates department totals and per-grade summaries
+- Tracks employee counts and rosters per department
+- Outputs formatted payroll summaries to the console
 
-How to Build & Run
-Compile from source:
+### Pay Grades Supported
+
+- **F1**  
+  Hourly employees paid a fixed hourly rate based on total hours worked.
+- **F2**  
+  Hourly employees with a base salary and overtime rules.
+- **F3**  
+  Commission-based employees paid based on sales amount and commission rate.
+- **F4**  
+  Employees with different weekday and weekend pay rates, based on daily time entries.
+
+(Exact calculation rules are implemented in the source code and explained separately in `notes.txt`.)
+
+### Files in This Repository
+
+- `README.md` – Project overview and usage information (this file)
+- `input.txt` – Sample payroll input data used by the program
+- `PayrollParser.cpp` – Complete C++ source code for the payroll processing program
+- `notes.txt` – Detailed explanation of time parsing logic, rounding rules, and pay-grade handling
+
+### How to Build and Run
+
+1. Make sure `input.txt` is in the same directory as the source/executable.
+2. Compile the program using a C++ compiler (example using g++):
 g++ PayrollParser.cpp -o SalaryProcessor
-./SalaryProcessor          # Windows: SalaryProcessor.exe
+3. Run the program:
+./SalaryProcessor   # On Windows: SalaryProcessor.exe
 
-Quick test:
-Place input.txt in the same folder and double-click SalaryProcessor.exe (Windows).
-The program will read input.txt and display formatted payroll summaries for each department.
-Bonus Features Implemented
 
-Columned/table output (5% bonus): Department and grade statistics are presented in clean, aligned boxed tables instead of plain text.
+The program will read `input.txt` and display payroll summaries for each department.
 
-(No chart bonus implemented — focus was on correctness, clarity, and formatting.)
-Code Design Highlights
+### Notes
 
-String parsing uses only find(), substr(), stoi(), stod()
-Dedicated functions for minute-to-hour conversion, F1/F2 parsing, F3 commission handling, and F4 day processing
-All tracking variables reset between departments
-Heavy inline commenting to explain parsing decisions and edge-case handling
+- This project is intentionally limited to fundamental C++ concepts.
+- No external libraries or STL containers beyond basic strings are used.
+- The goal is educational clarity rather than production-level optimization.
+- No compiled binaries are included in this repository.
 
-This project prioritizes readability, correctness, and educational value — making it a solid reference for students learning file processing, string manipulation, and structured program design in C++.
-Feel free to fork, study, or extend the code!
+**Author**  
+Brandon Mercado Perez
+
+Feel free to study or fork the code!
