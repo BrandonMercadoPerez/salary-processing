@@ -1,48 +1,65 @@
-# Salary Processing: Introductory Payroll Calculation System
+Salary Processing: Introductory Payroll Calculation System
+Project Overview
+Salary Processing is a beginner-friendly C++ console application that processes payroll data from a text file (input.txt) and computes department-level and pay-grade statistics.
+This was completed as a lab assignment in an introductory programming course. The code uses only fundamental C++ features — file I/O, string manipulation, loops, conditionals, and functions — to demonstrate clear, well-commented solutions to real-world-style problems.
+Key Features
 
-### **Project Overview:**
+Handles multiple departments from one input file
+Parses flexible time formats ("8 hours 20 minutes", "9hrs", "57 minutes", "10min", etc.)
+Supports all four pay grades with correct calculations:
+F1: total hours × $12.15
+F2: $500 base + overtime (hours > 35) × $18.95
+F3: sales × commission rate; 30 hours if rate ≤ 0.10, else 40 hours
+F4: first 5 days (weekday) × $26.55 + last 2 days (weekend) × $39.75
 
-> Salary Processing is an introductory C++ application designed to parse and compute payroll data from departmental employee records in a text file. This project focuses on foundational programming concepts such as file I/O, string manipulation, conditional logic, and modular functions to handle basic payroll calculations across different employee grades.
+Rounds minutes to nearest half-hour (1–29 min → 0.5 h; 30–59 min → 1.0 h)
+Produces clean, boxed tabular output with department totals and per-grade breakdowns
+Tracks and displays employee roster per department
 
-### **Key Features:**
+F4 Day Assignment & Parsing Logic
+F4 employees have exactly 7 time entries (Monday → Sunday).
+Entries are processed sequentially left-to-right using positional assignment:
+1–5 → Weekdays (Monday–Friday)
+6–7 → Weekend (Saturday–Sunday)
+Pairing rules:
 
-> Multi-Department Processing:  
-> Reads and summarizes payroll data for multiple departments from a single input file.  
+Hours token ("h"/"hrs"/"hours") sets base hours for the current day
+If minutes token immediately follows, they are combined with those hours and rounded
+Standalone minutes are converted and rounded independently for that day
 
-> Versatile Time Parsing:  
-> Handles mixed time formats (e.g., "8 hours 20 minutes", "7hrs 10min", "9 hours") with manual string extraction and rounding to the nearest half-hour.  
+Example – Kent (Sales Department):
+9hrs 8hrs 1min 9 hrs 7hrs 5 min 8 hrs 55min 6min 1hr
 
-> Grade-Specific Calculations:  
-> Applies unique logic for pay grades F1, F2, F3, and F4, including hourly rates, overtime, commissions, and weekend premiums.  
 
-> Commission Handling for F3:  
-> Processes sales amounts and commission rates, assigning assumed work hours based on rate thresholds (30 or 40 hours).  
+→ Monday: 9 h  Tuesday: 8 h + 1 min → 8.0 h  Wednesday: 9 h
+→ Thursday: 7 h + 5 min → 7.0 h  Friday: 8 h + 55 min → 9.0 h
+→ Saturday: 6 min → 0.5 h  Sunday: 1 h
+This linear approach keeps code simple and readable while correctly separating weekday and weekend pay.
+Files in This Repository
 
-> Weekend and Overtime for F4:  
-> Differentiates weekday and weekend hours with adjusted pay rates.  
+PayrollParser.cpp – Complete source code with extensive inline comments explaining every major step
+input.txt – Sample payroll data identical to the lab specification
+SalaryProcessor.exe – Pre-compiled Windows executable (for instant testing)
 
-> Formatted Output:  
-> Displays results in a boxed, tabular format with totals for salaries, hours, employees, and rosters per department and grade.  
+How to Build & Run
+Compile from source:
+g++ PayrollParser.cpp -o SalaryProcessor
+./SalaryProcessor          # Windows: SalaryProcessor.exe
 
-> Basic Error Handling:  
-> Includes file open checks and assumes consistent input structure for stability in an educational context.
+Quick test:
+Place input.txt in the same folder and double-click SalaryProcessor.exe (Windows).
+The program will read input.txt and display formatted payroll summaries for each department.
+Bonus Features Implemented
 
-## **Code Brainstorming:**
+Columned/table output (5% bonus): Department and grade statistics are presented in clean, aligned boxed tables instead of plain text.
 
-### **Basic Memory Management:**
+(No chart bonus implemented — focus was on correctness, clarity, and formatting.)
+Code Design Highlights
 
-> Relies on stack-based variables and simple data types to avoid complexity.  
-> Uses primitive types like floats, doubles, and strings for calculations and storage.  
-> Avoids dynamic allocation to keep the focus on introductory concepts.
+String parsing uses only find(), substr(), stoi(), stod()
+Dedicated functions for minute-to-hour conversion, F1/F2 parsing, F3 commission handling, and F4 day processing
+All tracking variables reset between departments
+Heavy inline commenting to explain parsing decisions and edge-case handling
 
-### **Core Language Fundamentals:**
-
-> Employs conditional statements (if-else) for decision-making in parsing and calculations.  
-> Utilizes loops (while, for) for iterative string processing and data accumulation.  
-> Leverages standard library functions like stoi/stod for string-to-number conversions.
-
-### **Modular Design Principles:**
-
-> Defines separate functions for each pay grade's processing (e.g., processF1F2, processF3, processF4) to promote code reuse and readability.  
-> Includes helper functions like convertMinutesToHours for time rounding.  
-> Uses pass-by-reference in functions to efficiently update tracking variables without global scope.
+This project prioritizes readability, correctness, and educational value — making it a solid reference for students learning file processing, string manipulation, and structured program design in C++.
+Feel free to fork, study, or extend the code!
