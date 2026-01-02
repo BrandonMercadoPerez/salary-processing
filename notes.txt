@@ -1,0 +1,143 @@
+NOTES – Salary Processing Lab 8 (Chapter 7)
+
+This file explains the design decisions, parsing logic, and calculation rules used in the Salary Processing (Lab 8) C++ program. The goal of this document is to clarify how time values, pay grades, and department summaries are handled using only introductory-level C++ concepts.
+
+---
+
+## GENERAL PROGRAM FLOW
+
+1. The program reads payroll data line-by-line from input.txt.
+2. Department headers are identified by lines beginning with the word "The".
+3. Employee records are processed until a new department header is found.
+4. Payroll totals are calculated and displayed per department.
+5. All tracking variables are reset before moving to the next department.
+
+The program avoids advanced C++ features and uses only:
+
+* ifstream for file input
+* string manipulation (find, substr, erase)
+* conditionals and loops
+* basic helper functions
+
+---
+
+## TIME PARSING AND ROUNDING RULES
+
+Time values in the input file may appear in many formats, such as:
+
+* "8 hours"
+* "7hrs"
+* "10 hours 12 minutes"
+* "6min"
+* "1hr 34 minutes"
+
+To handle this unstructured input, the program scans for:
+
+* 'h' or 'hrs' to detect hours
+* 'm' or 'min' to detect minutes
+
+Minutes are converted using the following rounding rules:
+
+* 1 to 29 minutes → 0.5 hours
+* 30 to 59 minutes → 1.0 hour
+* 0 minutes → 0.0 hours
+
+These rules are implemented in a helper function that converts minutes into fractional hours.
+
+---
+
+## F1 AND F2 EMPLOYEE PROCESSING
+
+F1 and F2 employees list only time values.
+
+The program:
+
+* Extracts all hour and minute values from the line
+* Accumulates total minutes and total hours
+* Converts remaining minutes to fractional hours
+* Returns total hours worked for that employee
+
+Pay rules:
+
+* F1: Total hours × $12.15
+* F2: $500 base salary
+  + overtime pay for hours above 35 at $18.95/hour
+
+---
+
+## F3 EMPLOYEE PROCESSING (COMMISSION)
+
+F3 employees do not list time worked. Instead, they list:
+
+* Sales amount (may contain commas)
+* Commission rate
+
+Processing steps:
+
+1. The dollar sign is located to extract the sales amount.
+2. Commas are removed manually before conversion to a number.
+3. The commission rate is read as a decimal value.
+4. Work hours are assigned as:
+
+   * 30 hours if commission ≤ 10%
+   * 40 hours if commission > 10%
+
+Pay rule:
+
+* Salary = sales amount × commission rate
+
+---
+
+## F4 EMPLOYEE PROCESSING (DAILY ENTRIES)
+
+F4 employees have exactly 7 time entries, representing:
+
+* Monday through Friday (weekday)
+* Saturday and Sunday (weekend)
+
+Processing logic:
+
+* Time entries are read sequentially from left to right.
+* The first 5 entries are counted as weekday hours.
+* The last 2 entries are counted as weekend hours.
+
+Hour-minute pairing rules:
+
+* If minutes immediately follow hours, they are combined and rounded.
+* Standalone minutes are rounded independently.
+
+Pay rules:
+
+* Weekday hours × $26.55
+* Weekend hours × $39.75
+
+---
+
+## DEPARTMENT SUMMARY OUTPUT
+
+For each department, the program displays:
+
+* Department name
+* Total salary
+* Total hours worked
+* Total number of employees
+* Employee roster (names)
+
+Additionally, per-pay-grade statistics are shown:
+
+* Total salary per grade
+* Total hours per grade
+* Number of employees per grade
+
+Output is formatted using iomanip to create clean, boxed tables.
+
+---
+
+## DESIGN NOTES
+
+* All parsing is done using basic string functions.
+* No vectors, stringstreams, or advanced STL containers are used.
+* Variables are reset after each department to avoid data leakage.
+* The program prioritizes readability and correctness over optimization.
+
+This design aligns strictly with introductory programming course expectations while handling complex, real-world-style input data.
