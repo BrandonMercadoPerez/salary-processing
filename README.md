@@ -137,7 +137,7 @@ An interactive React dashboard that ports the same parsing algorithm and pay-gra
 
 **Live:** https://web-mu-five-96.vercel.app
 
-[View Web App →](https://web-mu-five-96.vercel.app)
+[View Web App →](https://github.com/BrandonMercadoPerez/salary-processing/blob/main/web/README.md)
 
 ---
 
