@@ -39,3 +39,19 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 | **Build tool** | Vite 6 |
 | **Charts** | Recharts |
 | **Font** | IBM Plex Mono |
+
+---
+
+## Screenshots
+
+**Screen 1 — Input**
+
+![Input screen](screenshots/screen1-input.png)
+
+**Screen 2 — Dashboard (KPI cards · bar chart · donut chart)**
+
+![Dashboard top](screenshots/screen2-dashboard-top.png)
+
+**Screen 2 — Dashboard (top earners · department breakdown)**
+
+![Dashboard bottom](screenshots/screen3-dashboard-bottom.png)
