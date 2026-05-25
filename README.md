@@ -108,7 +108,19 @@ Reads from `input.txt` in the same directory. Output prints directly to the term
 
 ## Web App
 
-A React + Vite dashboard built on top of this same parsing logic, with KPI cards, charts, and collapsible department breakdowns. See the `/web` folder.
+A React + Vite dashboard built on top of this same parsing logic, with KPI cards, charts, and collapsible department breakdowns.
+
+[View Web App →](web/)
+
+## Screenshots
+
+**Input screen** — drag-and-drop a `.txt` file or paste raw text:
+
+![Input screen](web/screenshots/screen1-input.png)
+
+**Dashboard** — KPI cards, payroll by department, grade distribution, top earners:
+
+![Dashboard](web/screenshots/screen2-dashboard.png)
 
 ---
 
