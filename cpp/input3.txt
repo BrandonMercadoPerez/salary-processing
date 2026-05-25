@@ -1,0 +1,27 @@
+The IT Department
+Aaron 7 hours 45 minutes 8hours 15minutes 7hrs 50min 8hours 20minutes F1
+Diana 8hrs 10min 7hrs 55min 8hrs 5min 7hrs 45min F2
+Ethan 9hours 20minutes 8hours 40minutes 9hours 10minutes 8hours 35minutes F2
+Grace 8hrs 30min 9hrs 5min 8hrs 15min 7hrs 50min 2hrs 10min 45min F4
+The Sales Department
+Mason $26,450 0.095 F3
+Olivia $19,875 0.080 F3
+Noah 7hrs 45min 8hrs 10min 6hrs 55min 8hrs 5min F2
+Sophia $31,220 0.050 F3
+Lucas 8hrs 50min 9hrs 10min 8hrs 5min 7hrs 40min 55min 1hr 5min F4
+The Overseas Department
+Victor $27,100 0.110 F3
+Hannah 6hours 55minutes 7hours 20minutes 1hour 35minutes 8hours 5minutes F1
+Logan 8hrs 15min 8hrs 25min 7hrs 50min 8hrs 5min F2
+The Finance Department
+Nathan $42,500 0.065 F3
+Emily $38,900 0.072 F3
+Jason 8hrs 20min 8hrs 5min 7hrs 55min 8hrs 10min F2
+Chloe 7hours 40minutes 8hours 15minutes 7hours 50minutes 8hours 5minutes F1
+Ryan 9hrs 5min 8hrs 45min 9hrs 15min 7hrs 55min 50min 1hr 15min F4
+The Human Resources Department
+Megan $22,750 0.055 F3
+Andrew 8hrs 5min 7hrs 50min 8hrs 10min 8hrs 15min F2
+Samantha 7hours 35minutes 8hours 5minutes 7hours 55minutes 8hours 25minutes F1
+Kevin $25,600 0.060 F3
+Rachel 8hrs 45min 8hrs 55min 7hrs 50min 8hrs 5min 40min 1hr 10min F4
