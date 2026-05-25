@@ -108,9 +108,7 @@ Reads from `input.txt` in the same directory. Output prints directly to the term
 
 ## Web App
 
-A React + Vite dashboard built on top of this same parsing logic, with KPI cards, charts, and collapsible department breakdowns.
-
-**[salary-processing-web →](https://github.com/BrandonMercadoPerez/salary-processing-web)**
+A React + Vite dashboard built on top of this same parsing logic, with KPI cards, charts, and collapsible department breakdowns. See the `/web` folder.
 
 ---
 
